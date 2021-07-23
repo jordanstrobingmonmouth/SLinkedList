@@ -136,6 +136,24 @@ public class List {
 		size--;
 
 	}
+	
+	public void swap() {
+		
+		Node temp = head;
+		
+		while (temp.getNext().getNext() != null) {
+			temp = temp.getNext();
+		}
+		
+		tail.setNext(head.getNext());
+		temp.setNext(head);
+		head.setNext(null);
+		
+		temp = head;
+		head = tail;
+		tail = temp;
+		
+	}
 
 
 	public void display() {
